@@ -12,8 +12,6 @@ export class FirstListComponent implements OnInit {
   constructor(private getData: CompanyDataService) {}
 
   ngOnInit() {
-    this.getData.getAPIData().subscribe((response) => {
-      this.compData = response;
-    });
+   
   }
 }

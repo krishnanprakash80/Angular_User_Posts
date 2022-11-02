@@ -1,0 +1,6 @@
+List of posts by selected user :
+<div *ngFor="let post of postsData" id="posts_{{ post.id }}">
+  <span>{{ post.id }} - {{ post.title }}</span>
+  <br />
+  <span>{{ post.body }}</span>
+</div>

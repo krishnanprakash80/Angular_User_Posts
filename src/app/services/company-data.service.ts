@@ -6,11 +6,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   providedIn: 'root',
 })
 export class CompanyDataService {
-  private url = 'https://jsonplaceholder.typicode.com/users';
+  private userUrl = 'https://jsonplaceholder.typicode.com/users';
+  private postUrl = 'https://jsonplaceholder.typicode.com/posts?userId=';
 
   constructor(private httpClient: HttpClient) {}
 
   getAPIData() {
-    return this.httpClient.get(this.url);
+    return this.httpClient.get(this.userUrl);
+  }
+
+  getUserPosts(userid) {
+    return this.httpClient.get(this.postUrl + userid);
   }
 }
