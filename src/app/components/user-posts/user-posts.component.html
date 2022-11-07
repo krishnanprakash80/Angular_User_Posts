@@ -1,4 +1,6 @@
-List of posts by selected user :
+<div *ngIf="userId != null">
+  <h2>List of posts by selected user :</h2>
+</div>
 <div *ngFor="let post of postsData" id="posts_{{ post.id }}">
   <span>{{ post.id }} - {{ post.title }}</span>
   <br />

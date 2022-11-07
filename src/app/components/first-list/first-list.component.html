@@ -1,6 +1,7 @@
 List of Users :
-<select>
+<select (change)="changeUserId($event.target)">
   <option *ngFor="let comp of compData" [value]="comp.id">
     {{ comp.id }} - {{ comp.name }}}
   </option>
 </select>
+<app-user-posts [userId]="uId"></app-user-posts>

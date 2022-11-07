@@ -9,9 +9,17 @@ import { CompanyDataService } from '../../services/company-data.service';
 })
 export class FirstListComponent implements OnInit {
   compData: any;
+  uId: any;
   constructor(private getData: CompanyDataService) {}
 
   ngOnInit() {
-   
+    this.getData.getAPIData().subscribe((response) => {
+      this.compData = response;
+    });
+  }
+
+  changeUserId(e) {
+    console.log('Onchange value' + e.value);
+    this.uId = e.value;
   }
 }
